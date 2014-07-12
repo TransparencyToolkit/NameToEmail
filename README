@@ -1,0 +1,20 @@
+This takes a JSON with a name and optionally domain and returns potentially functional emails. To use, download the nametoemail gem then-
+
+To use a domain in the JSON to get all email combinations:
+n = NameToEmail.new(JSON, "name field", false, nil, "domain field", "all")
+n.genemails
+
+To use a domain of your choice to get all email combinations:
+n = NameToEmail.new(JSON, "name field", true, "domainofyourchoice.com", nil, "all")
+n.genemails
+
+To get emails of only one format, change the last argument from "all" to one of the following:
+"firstlastdot" for firstname.lastname@domain
+"firstinitiallastname" for firstinitiallastname@domain
+"firstunderscorelast" for firstname_lastname@domain
+"lastnamefirstinitial" for lastnamefirstinitial@domain
+"justlast" for lastname@domain
+
+Output formats:
+n.jsonwithemails to get a json with the emails appended to each item
+n.emaillist to get just the emails
